@@ -1,2 +1,239 @@
-@use 'base';
-@use 'utilities'; 
+@use 'abstracts' as *;
+@use 'base' as *;
+@use 'utilities' as *;
+
+ body {
+   font-family: sans-serif;
+   font-size: 1.125rem;
+   background-image: url(../img/BG.png);
+   background-size: cover;
+   text-transform: uppercase;
+   overflow-x: hidden; 
+ }
+
+ h1 {
+   font-size: 1.125rem;
+ }
+
+ h2 {
+   font-size: 1.25rem;
+ }
+
+ .pseudo-title {
+   font-size: clamp(5rem, 1rem + 10vw, 9rem);
+   line-height: .8;
+   font-weight: 900;
+   margin-bottom: 1em;
+  width: min-content;
+  margin-left: auto;
+ }
+
+ .btn {
+   display: inline-block;
+   text-decoration: none;
+   font-weight: 700;
+   color: inherit;
+   cursor: pointer;
+   background: 0;
+   border: 0;
+   padding: 1em 3em;
+   background-image: linear-gradient(
+     75deg,
+     var(--clr-secondary-400),
+     var(--clr-secondary-500)
+   );
+   border-radius: .5rem; 
+   transition: transform ease-in-out 400ms;
+
+   &:hover,
+   &:focus {
+     transform: scale(1.05)
+   }
+ }
+
+ .main-grid {
+  // width: min(100%, 150rem);
+  margin: 0 auto;
+  display: grid;  
+  grid-template-areas: 
+    'main'
+    'footer';
+  @include mq(medium) {
+    grid-template-areas:
+      'footer'
+      'main';
+  }
+ }
+
+ main {
+   grid-area: main; 
+   display: grid;
+   align-items: start;
+   
+   @include mq(medium) {
+     grid-template-columns: 40% 60%;
+   }
+ }
+
+ .hero {
+   padding-right: min(5vw, 10rem);
+   padding-left: 2rem;
+   padding-bottom: 2rem;
+   padding-top: 5rem;
+   margin-bottom: 3rem;
+   background-image: url(../img/color-bands.png);
+   background-repeat: no-repeat;
+   background-size: 100%;
+   background-position: bottom -50px center;
+   padding-bottom: 14vw;
+   position: relative;
+
+  @include mq(medium) {
+    text-align: right;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 25rem;
+    height: 3rem;
+    background-image: radial-gradient(
+      ellipse at top,
+      white, 15%,
+      transparent 70%);
+  }
+ }
+
+ 
+
+ .features {
+  border-radius: .5rem;
+  width: min(65rem, 100%);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: var(--clr-neutral-800);
+    top: 0;
+    bottom: 0;
+    left: 80%;
+    width: 100vw;
+    z-index: -1;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+   @include mq(large) {
+
+     flex-direction: row;
+
+     & > * {
+       flex-basis: 100%;
+     }
+   }
+
+   & > li {
+      position: relative;
+
+      &:nth-child(1) {
+        margin-top: -3rem;
+      }
+      &:nth-child(2) {
+        margin-top: -7rem;
+      }
+      &:nth-child(3) {
+        transform: translateY(7rem);
+      }
+
+      &::after,
+      &:nth-child(3)::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 2px;
+        background-image: linear-gradient(
+          transparent, white, transparent
+        )
+      }
+
+      &:nth-child(1)::after {
+        transform: translateY(-10rem);
+      }
+
+      &:nth-child(2)::after {
+        transform: translateY(0rem);
+      }
+
+      &:nth-child(3)::after {
+        transform: translateY(-8rem);
+      }
+
+      &:nth-child(3)::before {
+        left: auto;
+        right: 0;
+        transform: translateY(8rem);
+      }
+   }
+
+   
+  }
+ }
+
+ .card {
+
+  &__content {
+    padding: 1em;
+
+    background-image:radial-gradient(
+      circle at -30px -30px,
+      var(--clr-primary-400),
+      transparent 30%
+    )
+  }
+
+   &__subtitle {
+     font-size: 2.5rem;
+     line-height: 1;
+     font-weight: 900;
+     margin: .25em 0 .75em;
+   }
+ }
+ 
+footer {
+  grid-area: footer;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  @include mq(large) {
+    padding: 5rem 0;
+  }
+}
+
+.social-list {
+  grid-column: 2 / 3;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+  width: min(65rem, 100%);
+}
+
+
+
+
+
+
+
+
+
