@@ -2,3 +2,7 @@
 *.css.map
 *.sass.map
 *.scss.map
+
+# Config Prepros files to ignore
+prepros.config
+

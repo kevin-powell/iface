@@ -1,0 +1,309 @@
+:root {
+  --clr-primary-100: #ffb199;
+  --clr-primary-200: #ff8a66;
+  --clr-primary-300: #ff6333;
+  --clr-primary-400: #db2c00;
+  --clr-primary-500: #661800;
+  --clr-secondary-100: #ffb199;
+  --clr-secondary-200: #ff8a66;
+  --clr-secondary-300: #ff6333;
+  --clr-secondary-400: #db2c00;
+  --clr-secondary-500: #661800;
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.563rem;
+  --fs-600: 1.953rem;
+  --fs-700: 2.441rem;
+  --fs-800: 3.052rem;
+}
+@media only screen and (min-width: 40em) {
+  :root {
+    --fs-300: 1rem;
+    --fs-400: 1.25rem;
+    --fs-500: 2rem;
+    --fs-600: 2.827rem;
+    --fs-700: 4rem;
+    --fs-800: 5.653rem;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+* {
+  font-variation-settings: "wght" var(--font-weight, 375), "wdth" var(--font-width, 80);
+}
+
+body {
+  font-size: var(--fs-400);
+  font-family: "Alaska", sans-serif;
+  color: var(--clr-neutral-900);
+  letter-spacing: -0.5px;
+}
+
+h1, h2, h3, h4 {
+  --font-weight: 700;
+  --font-width: 80;
+  font-weight: normal;
+  font-stretch: 100%;
+  line-height: 1.1;
+  color: var(--clr-neutral-800);
+}
+
+h1 {
+  --font-weight: 900;
+  color: var(--clr, var(--clr-primary-400));
+}
+
+.title {
+  font-size: clamp(var(--fs-600), calc(1rem + 5vw), 5rem);
+}
+
+.article-snippet-title {
+  --font-weight: 600;
+}
+
+.article #main-content p:first-of-type {
+  font-size: 1.5rem;
+}
+
+h1,
+.h1 {
+  font-size: --fs-800;
+}
+
+h2,
+.h2 {
+  --flow-spacer: 1.5em;
+  font-size: --fs-700;
+}
+
+h3,
+.h3 {
+  --flow-spacer: 1.5em;
+  font-size: --fs-600;
+}
+
+h4,
+.h4 {
+  font-size: --fs-500;
+}
+
+small,
+.text-small {
+  font-size: var(--fs-300);
+}
+
+strong {
+  --font-weight: 500;
+  font-weight: normal;
+}
+
+a {
+  color: var(--clr, var(--clr-primary-400));
+}
+a:hover, a:focus {
+  color: var(--clr-primary-400);
+  text-decoration: none;
+}
+
+p:not([class]),
+ul:not([class]),
+li:not([class]) {
+  max-width: 60ch;
+}
+
+body {
+  margin: 0;
+}
+
+.text-primary-100 {
+  color: var(--clr-primary-100) !important;
+}
+
+.bg-primary-100 {
+  background-color: var(--clr-primary-100) !important;
+}
+
+.text-primary-200 {
+  color: var(--clr-primary-200) !important;
+}
+
+.bg-primary-200 {
+  background-color: var(--clr-primary-200) !important;
+}
+
+.text-primary-300 {
+  color: var(--clr-primary-300) !important;
+}
+
+.bg-primary-300 {
+  background-color: var(--clr-primary-300) !important;
+}
+
+.text-primary-400 {
+  color: var(--clr-primary-400) !important;
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400) !important;
+}
+
+.text-primary-500 {
+  color: var(--clr-primary-500) !important;
+}
+
+.bg-primary-500 {
+  background-color: var(--clr-primary-500) !important;
+}
+
+.text-secondary-100 {
+  color: var(--clr-secondary-100) !important;
+}
+
+.bg-secondary-100 {
+  background-color: var(--clr-secondary-100) !important;
+}
+
+.text-secondary-200 {
+  color: var(--clr-secondary-200) !important;
+}
+
+.bg-secondary-200 {
+  background-color: var(--clr-secondary-200) !important;
+}
+
+.text-secondary-300 {
+  color: var(--clr-secondary-300) !important;
+}
+
+.bg-secondary-300 {
+  background-color: var(--clr-secondary-300) !important;
+}
+
+.text-secondary-400 {
+  color: var(--clr-secondary-400) !important;
+}
+
+.bg-secondary-400 {
+  background-color: var(--clr-secondary-400) !important;
+}
+
+.text-secondary-500 {
+  color: var(--clr-secondary-500) !important;
+}
+
+.bg-secondary-500 {
+  background-color: var(--clr-secondary-500) !important;
+}
+
+.container {
+  padding: 0 1.5rem;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-spacer, 0.75em);
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.screenreader-text {
+  position: absolute;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+}
+.screenreader-text:focus {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  position: static;
+  margin: auto;
+}
